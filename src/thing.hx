@@ -3,6 +3,9 @@ var shad:FlxRuntimeShader;
 var STUFF:FlxSprite;
 var tvContent:FlxSprite;
 function onCreate(){
+
+
+    // YOU CAN REMOVE THIS IF U DONT WANT THE PIXELATED SHADER
     shad = new FlxRuntimeShader("
     #pragma header
     vec2 uBlocksize = vec2(7, 7);
@@ -30,16 +33,21 @@ function onCreate(){
 
      }
     ");
+
+    
     shad.setFloat("size",30.0);
     tvContent = new FlxSprite();
     tvContent.makeGraphic(1280, 720, FlxColor.BLACK);
     game.addBehindDad(tvContent);
     tvContent.screenCenter();
+
+        // YOU CAN REMOVE THIS IF U DONT WANT THE PIXELATED SHADER
     tvContent.shader = shad;
+        // YOU CAN REMOVE THIS IF U DONT WANT THE PIXELATED SHADER
+
     tvContent.scale.set(0.5,0.5);
     //tvContent.colorTransform.redOffset = tvContent.colorTransform.blueOffset = tvContent.colorTransform.greenOffset = 100;
     tvContent.x+=110;
-    trace("gyatt!");
 }
 function onUpdatePost(elapsed:Float){
     tvContent.pixels.draw(game.camGame._scrollRect);
