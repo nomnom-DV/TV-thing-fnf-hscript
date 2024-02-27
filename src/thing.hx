@@ -49,6 +49,6 @@ function onCreate(){
     //tvContent.colorTransform.redOffset = tvContent.colorTransform.blueOffset = tvContent.colorTransform.greenOffset = 100;
     tvContent.x+=110;
 }
-function onUpdatePost(elapsed:Float){
+function onUpdatePost(elapsed:Float){ // REALLY UNOPTIMIZED, PERHAPS RUN ON STEP HIT, OR ONCE EVERY FEW FRAMES
     tvContent.pixels.draw(game.camGame._scrollRect);
 }
